@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { theme } from '../../styles/Theme'
 
 type ButtonPropsType = {
     title: string,
@@ -15,10 +16,10 @@ export const Button = (props: ButtonPropsType) => {
 const StyledButton = styled.button`
   display: flex;
   max-width: fit-content;
-  border: 1px solid #C778DD;
+  border: 1px solid ${theme.colors.primary};
   padding: 8px 16px;
   & a {
-      color: #FFFFFF;
+      color: ${theme.colors.white};
       font-weight: 500;
       size: 16px;
       line-height: 21px;

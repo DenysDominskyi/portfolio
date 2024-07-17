@@ -1,56 +1,107 @@
-import React from 'react'
 import styled from 'styled-components'
-import listStyleImg from '../../assets/images/#.svg'
+import { theme } from '../../styles/Theme'
 
-export const Navigation = () => {
+export const Navigation = (props: {menuItems: Array<string>}) => {
+
     return (
         <StyledNav>
             <ul>
-                <li>
-                    <a href="/home">home</a>
-                </li>
-                <li>
-                    <a href="/works">works</a>
-                </li>
-                <li>
-                    <a href="/about-me">about-me</a>
-                </li>
-                <li>
-                    <a href="/contacts">contacts</a>
-                </li>
-                {/* <div className='dropdown'>
-                    <input type="text" id='dropdown-input' placeholder='Select an option' autoComplete='off' />
-                    <div id='dropdown-options' className='dropdown-content'>
-                        <div className='dropdown-item'>EN</div>
-                        <div className='dropdown-item'>SV</div>
-                        <div className='dropdown-item'>UA</div>
-                    </div>
-                </div> */}
-                <select name="dropdown" id="dropdown">
-                    <option value="EN">EN</option>
-                    <option value="SV">SV</option>
-                    <option value="UA">UA</option>
-                </select>
+                {props.menuItems.map((item, index) => {
+                    return (
+                        <ListItem key={index}>
+                            <Link href="">{item}
+                            <Mask>
+                                <span>{item}</span>
+                            </Mask>
+                            <Mask>
+                                <span>{item}</span>
+                            </Mask>
+                            </Link>
+                        </ListItem>
+                    )
+                })}
             </ul>
         </StyledNav>
     )
 }
 
 const StyledNav = styled.nav`
-    & ul {
+    
+    ul {
+        display: flex;
         display: flex;
         gap: 30px;
     }
+`
 
-    & ul li::marker {
+const Link = styled.a`
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 500;
+    /* color: ${theme.colors.gray}; */
+    color: transparent;
+    transition: .2s;
+/* 
+    &:hover{
+        color: ${theme.colors.primary};
+    } */
+`
+
+const Mask = styled.span`
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    height: 50%;
+    overflow: hidden;
+    color: ${theme.colors.gray};
+    transition: all .2s;
+
+    & + & {
+        top: 50%;
+        span {
+            display: inline-block;
+            transform: translateY(-50%);
+        }
+    }
+`
+
+const ListItem = styled.li`
+    position: relative;
+
+    &::before{
+        content: '';
+        display: inline-block;
+        height: 1px;
+        background-color: ${theme.colors.primary};
+
+        position: absolute;
+        top: 50%;
+        left: -10px;
+        right: -10px;
+        z-index: 1;
+
+        transform: scale(0);
+        transition: all .2s;
+    }
+    
+    &::marker{
         content: '#';
-        color: #C778DD;
+        color: ${theme.colors.primary};
     }
 
-    & > ul > li > a {
-        font-size: 16px;
-        line-height: 21px;
-        font-weight: 500;
-        color: #ABB2BF;
+    &:hover{
+        &::before {
+            transform: scale(1);
+        }
+
+        ${Mask} {
+            transform: skewX(12deg) translateX(2px);
+            color: ${theme.colors.white};
+            
+            & + ${Mask} {
+                transform: skewX(12deg) translateX(-2px);
+            }
+        }
     }
 `

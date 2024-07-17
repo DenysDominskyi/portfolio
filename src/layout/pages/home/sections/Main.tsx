@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import photo from '../../../../assets/images/photo.png'
 import { Text } from '../../../../components/styledComponents/Text'
@@ -8,6 +7,7 @@ import { Button } from '../../../../components/button/Button'
 
 import logoImg1 from '../../../../assets/images/Logo.png'
 import logoImg2 from '../../../../assets/images/Dots.png'
+import { theme } from '../../../../styles/Theme'
 
 export const Main = () => {
   return (
@@ -16,7 +16,7 @@ export const Main = () => {
         <div>
           <h1>Elias is a <span>web designer</span> and <span>front-end developer</span></h1>
           <Text>He crafts responsive websites where technologies meet creativity</Text>
-          <Button title='Contact me' link='#'/>
+          <Button title='Contact me' link='#' />
         </div>
 
         <div>
@@ -24,7 +24,7 @@ export const Main = () => {
             <img src={photo} alt="my photo" />
           </Photo>
           <div>
-            <Icon iconId='rectangleStatus' width="16" height="16" viewBox='0 0 16 16'/>
+            <Icon iconId='rectangleStatus' width="16" height="16" viewBox='0 0 16 16' />
             <p>Currently working on <span>Portfolio</span></p>
           </div>
         </div>
@@ -34,6 +34,8 @@ export const Main = () => {
 }
 
 const StyledMain = styled.main`
+  min-height: 100vh;
+  display: flex;
   margin-bottom: 100px;
 
   & > div > :nth-child(1){
@@ -45,11 +47,11 @@ const StyledMain = styled.main`
     font-weight: 600;
     font-size: 32px;
     line-height: 42px;
-    color: #ffffff;
+    color: ${theme.colors.white};
     margin-bottom: 32px;
   }
   & h1 span {
-    color: #C778DD;
+    color: ${theme.colors.primary};
   }
 
   & div p{

@@ -1,4 +1,3 @@
-import React from 'react'
 import { Main } from './sections/Main'
 import { Projects } from './sections/Projects'
 import { Quote } from './sections/Quote'
