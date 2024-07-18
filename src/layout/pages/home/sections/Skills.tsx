@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
-import { SectionTitle } from '../../../../components/sectionTitle/SectionTitle'
 import { FlexWrapper } from '../../../../components/styledComponents/FlexWrapper'
 import { Icon } from '../../../../components/icon/Icon'
 import { Card } from '../../../../components/card/Card'
+import { SectionTitle } from '../../../../components/styledComponents/SectionTitle'
 
 export const Skills = () => {
   return (
     <StyledSkills>
-      <SectionTitle value='skills' lineWidth='240px' />
+      <SectionTitle title='skills' lineWidth='240px'/>
       <FlexWrapper justify='center' gap='50px'>
         <ElementsWrapper >
           <ElementOne>

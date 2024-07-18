@@ -1,18 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
-import { SectionTitle } from '../../../../components/sectionTitle/SectionTitle'
 import { Text } from '../../../../components/styledComponents/Text'
 import { Button } from '../../../../components/button/Button'
 import { FlexWrapper } from '../../../../components/styledComponents/FlexWrapper'
 import { Icon } from '../../../../components/icon/Icon'
 import photo2 from '../../../../assets/images/photo2.png'
+import { SectionTitle } from '../../../../components/styledComponents/SectionTitle'
 
 export const About = () => {
     return (
         <StyledAbout>
             <Icon iconId='frame' width="103" height="103" viewBox="0 0 103 103" />
             <Icon iconId='rectangle' width="155" height="155" viewBox="0 0 155 155" />
-            <SectionTitle value='about-me' lineWidth='325px' />
+            <SectionTitle title='about-me' lineWidth='325px' />
             <FlexWrapper justify='center'>
                 <FlexWrapper direction='column' width='515px'>
                     <Text>Hello, i’m Elias!</Text>

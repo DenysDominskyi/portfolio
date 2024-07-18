@@ -1,16 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
-import { SectionTitle } from '../../../../components/sectionTitle/SectionTitle'
 import { Icon } from '../../../../components/icon/Icon'
 import { Text } from '../../../../components/styledComponents/Text'
 import { FlexWrapper } from '../../../../components/styledComponents/FlexWrapper'
 import { Title } from '../../../../components/styledComponents/Title'
+import { SectionTitle } from '../../../../components/styledComponents/SectionTitle'
 
 export const Contacts = () => {
     return (
         <StyledContacts>
             <Icon iconId='frame' width="103" height="103" viewBox="0 0 103 103" />
-            <SectionTitle value='contacts' lineWidth='130px' />
+            <SectionTitle title='contacts' lineWidth='130px'/>
             <FlexWrapper justify='center'>
                 <Text>I’m interested in freelance opportunities. However, if you have other request or question, don’t hesitate to contact me</Text>
                 <ContactsCard>

@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import photo from '../../../../assets/images/photo.png'
 import { Text } from '../../../../components/styledComponents/Text'
-import { Icon } from '../../../../components/icon/Icon'
 import { Container } from '../../../../components/styledComponents/Container'
 import { Button } from '../../../../components/button/Button'
 
@@ -23,10 +22,10 @@ export const Main = () => {
           <Photo>
             <img src={photo} alt="my photo" />
           </Photo>
-          <div>
-            <Icon iconId='rectangleStatus' width="16" height="16" viewBox='0 0 16 16' />
-            <p>Currently working on <span>Portfolio</span></p>
-          </div>
+          <StatusBox>
+            <Square></Square>
+            <Text>Currently working on <span>Portfolio</span></Text>
+          </StatusBox>
         </div>
       </Container>
     </StyledMain>
@@ -34,9 +33,9 @@ export const Main = () => {
 }
 
 const StyledMain = styled.main`
-  min-height: 100vh;
+  min-height: 75vh;
   display: flex;
-  margin-bottom: 100px;
+  padding-top: 60px;
 
   & > div > :nth-child(1){
     max-width: 540px;
@@ -81,7 +80,7 @@ const Photo = styled.div`
     content: '';
     position: absolute;
     top: 65%;
-    right: 0;
+    right: 5%;
     width: 85px;
     height: 85px;
     background-image: url(${logoImg2});
@@ -95,5 +94,29 @@ const Photo = styled.div`
     left: -20%;
     width: 130%;
   }
+`
+const StatusBox = styled.div`
+  max-width: 85%;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid ${theme.colors.gray};
+  padding: 5px;
+  margin: 0 auto;
 
+  ${Text} {
+    margin-bottom: 0;
+
+    span {
+      font-weight: 600;
+      color: ${theme.colors.white};
+    }
+  }
+`
+
+const Square = styled.span`
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: ${theme.colors.primary};
 `
