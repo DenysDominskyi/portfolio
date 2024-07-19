@@ -2,83 +2,72 @@ import React from 'react'
 import styled from 'styled-components'
 import { FlexWrapper } from '../../../../components/styledComponents/FlexWrapper'
 import { Icon } from '../../../../components/icon/Icon'
-import { Card } from '../../../../components/card/Card'
+import { Card } from '../../../../components/cards/Card'
 import { SectionTitle } from '../../../../components/styledComponents/SectionTitle'
+import { Container } from '../../../../components/styledComponents/Container'
+import { SkillsCard } from '../../../../components/cards/SkillsCard'
 
 export const Skills = () => {
   return (
     <StyledSkills>
-      <SectionTitle title='skills' lineWidth='240px'/>
-      <FlexWrapper justify='center' gap='50px'>
-        <ElementsWrapper >
-          <ElementOne>
-            <Icon iconId='frame' width='60' height='60' viewBox='0 0 63 63' />
-          </ElementOne>
-          <ElementTwo>
-            <Icon iconId='rectangle' width='87' height='87' viewBox='0 0 87 87' />
-          </ElementTwo>
-          <ElementThree>
-            <Icon iconId='logoPic' width='115' height='115' viewBox='0 0 115 115' />
-          </ElementThree>
-          <ElementFour>
-            <Icon iconId='frame' width='60' height='60' viewBox='0 0 63 63' />
-          </ElementFour>
-          <ElementFive>
-            <Icon iconId='rectangle' width='52' height='52' viewBox='0 0 87 87' />
-          </ElementFive>
-        </ElementsWrapper>
-        <FlexWrapper direction='row-reverse' wrap='wrap' gap='16px' width='590px'>
-          <Card
-            maxWidth='180px'
-            title='Tools'
-            text='VSCode Neovim Linus Figma XFCE Arch Git Font Awesome'
-            titleSize='16px'
-            titleBorder={true}
-          />
-          <Card
-            maxWidth='180px'
-            title='Databases'
-            text='SQLite PostgreSQL Mongo'
-            titleSize='16px'
-            titleBorder={true}
-          />
-          <Card
-            maxWidth='180px'
-            title='Languages'
-            text='TypeScript Lua Python JavaScript'
-            titleSize='16px'
-            titleBorder={true}
-          />
-          <Card
-            maxWidth='180px'
-            title='Frameworks'
-            text='React Vue Disnake Discord.js Flask Express.js'
-            titleSize='16px'
-            titleBorder={true}
-          />
-          <Card
-            maxWidth='180px'
-            title='Other'
-            text='HTML CSS EJS SCSS REST Jinja'
-            titleSize='16px'
-            titleBorder={true}
-          />
+      <Container direction='column' gap='10px'>
+        <SectionTitle title='skills' lineWidth='240px'/>
+        <FlexWrapper justify='center' gap='50px'>
+          <ElementsWrapper >
+            <ElementOne>
+              <Icon iconId='frame' width='60' height='60' viewBox='0 0 63 63' />
+            </ElementOne>
+            <ElementTwo>
+              <Icon iconId='rectangle' width='87' height='87' viewBox='0 0 87 87' />
+            </ElementTwo>
+            <ElementThree>
+              <Icon iconId='logoPic' width='115' height='115' viewBox='0 0 115 115' />
+            </ElementThree>
+            <ElementFour>
+              <Icon iconId='frame' width='60' height='60' viewBox='0 0 63 63' />
+            </ElementFour>
+            <ElementFive>
+              <Icon iconId='rectangle' width='52' height='52' viewBox='0 0 87 87' />
+            </ElementFive>
+          </ElementsWrapper>
+          <FlexWrapper direction='row-reverse' wrap='wrap' gap='16px'>
+            <SkillsCard
+              title='Tools'
+              technology='VSCode Neovim Linus Figma XFCE Arch Git Font Awesome'
+            />
+            <SkillsCard
+              title='Databases'
+              technology='SQLite PostgreSQL Mongo'
+            />
+            <SkillsCard
+              title='Languages'
+              technology='TypeScript Lua Python JavaScript'
+            />
+            <SkillsCard
+              title='Frameworks'
+              technology='React Vue Disnake Discord.js Flask Express.js'
+            />
+            <SkillsCard
+              title='Other'
+              technology='HTML CSS EJS SCSS REST Jinja'
+            />
+          </FlexWrapper>
         </FlexWrapper>
-      </FlexWrapper>
+      </Container>
     </StyledSkills>
   )
 }
 
 const StyledSkills = styled.section`
-  min-height: 50vh;
+  margin-bottom: 110px;
 `
 const ElementsWrapper = styled.div`
     position: relative;
-    width: 350px;
+    min-width: 350px;
     height: 280px;
 `
 
-const ElementOne = styled.div`
+const ElementOne = styled.span`
   position: absolute;
   top: 10%;
   left: 0;

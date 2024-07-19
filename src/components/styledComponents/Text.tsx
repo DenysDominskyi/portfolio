@@ -10,5 +10,4 @@ export const Text = styled.p<TextPropsType>`
     font-size: ${props => props.size || '16px'};
     line-height: 25px;
     color: ${theme.colors.gray};
-
 `

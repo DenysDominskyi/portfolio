@@ -33,9 +33,9 @@ export const Main = () => {
 }
 
 const StyledMain = styled.main`
-  min-height: 75vh;
   display: flex;
-  padding-top: 60px;
+  padding-top: 80px;
+  margin-bottom: 100px;
 
   & > div > :nth-child(1){
     max-width: 540px;

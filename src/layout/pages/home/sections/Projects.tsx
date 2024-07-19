@@ -1,7 +1,6 @@
-import React from 'react'
 import styled from 'styled-components'
 import { FlexWrapper } from '../../../../components/styledComponents/FlexWrapper'
-import { Card } from '../../../../components/card/Card'
+import { Card } from '../../../../components/cards/Card'
 import project1 from '../../../../assets/images/project1.png'
 import project2 from '../../../../assets/images/project2.png'
 import project3 from '../../../../assets/images/project3.png'
@@ -21,22 +20,22 @@ export const Projects = () => {
         <FlexWrapper gap='15px'>
           <Card
             imgSrc={project1}
-            technology='HTML SCSS JavaScript TypeScript React Redux'
-            title='Project1'
+            technology='HTML SCSS Pyton Flask'
+            title='ChertNodes'
             text='About this project'
             button={2}
           />
           <Card
             imgSrc={project2}
-            technology='HTML SCSS JavaScript TypeScript React Redux'
-            title='Project2'
+            technology='React Express Discord.js Node.js HTML SCSS Pyton Flask'
+            title='ProjectX'
             text='About this project'
             button={1}
           />
           <Card
             imgSrc={project3}
-            technology='HTML SCSS JavaScript TypeScript React Redux'
-            title='Project3'
+            technology='CSS Express Node.js'
+            title='Kahoot Answers Viewer'
             text='About this project'
             button={1}
           />
@@ -47,9 +46,22 @@ export const Projects = () => {
 }
 
 const StyledProjects = styled.section`
-  height: 80vh;
+margin-bottom: 105px;
+  overflow: hidden;
 
   ${Container} {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -265px;
+      width: 155px;
+      height: 155px;
+      border: 1px solid ${theme.colors.gray};
+    }
+
     ${FlexWrapper}:first-child{
       width: 100%;
     }

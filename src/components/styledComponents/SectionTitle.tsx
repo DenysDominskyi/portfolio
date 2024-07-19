@@ -45,5 +45,5 @@ const Line = styled.div<LinePropsType>`
     width: 100%;
     max-width: ${props => props.width};
     min-width: 100px;
-    border: 1px solid ${theme.colors.primary};
+    border-top: 1px solid ${theme.colors.primary};
 `

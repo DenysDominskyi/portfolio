@@ -14,8 +14,8 @@ export const Header = () => {
       <SocialNav />
       <Container justify='space-between'>
         <Logo />
-        <FlexWrapper gap='25px'>
-          <Navigation menuItems={items}/>
+        <FlexWrapper justify='flex-end' gap='25px'>
+          <Navigation menuItems={items} />
           {/* <div className='dropdown'>
             <input type="text" id='dropdown-input' placeholder='Select an option' autoComplete='off' />
             <div id='dropdown-content' className='dropdown-content'>

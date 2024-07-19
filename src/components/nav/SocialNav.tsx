@@ -5,9 +5,9 @@ import { theme } from '../../styles/Theme'
 export const SocialNav = () => {
   return (
     <StyledSocialNav>
-        <a href="#"><Icon iconId='github' viewBox='32' width='30' height='30'/></a>
-        <a href="#"><Icon iconId='dribble' viewBox='50' width='32' height='30'/></a>
-        <a href="#"><Icon iconId='figma' viewBox='32' width='32' height='30'/></a>
+        <a href="#"><Icon iconId='github' viewBox='0 0 30 30' width='30' height='30' fill={theme.colors.gray}/></a>
+        <a href="#"><Icon iconId='dribble' viewBox='0 0 32 32' width='32' height='30' fill={theme.colors.gray}/></a>
+        <a href="#"><Icon iconId='figma' viewBox='0 0 32 32' width='32' height='30' fill={theme.colors.gray}/></a>
     </StyledSocialNav>
   )
 }

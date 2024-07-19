@@ -23,9 +23,9 @@ export const Quote = () => {
 }
 
 const StyledQuote = styled.section`
-  min-height: 25vh;
   overflow: hidden;
   padding-top: 40px;
+  margin-bottom: 70px;
 
   ${Container} {
     position: relative;
