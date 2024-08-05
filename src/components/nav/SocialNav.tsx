@@ -44,4 +44,8 @@ const StyledSocialNav = styled.nav`
             }
         }
     }
+
+    @media ${theme.media.tablet} {
+        display: none;
+    }
 `

@@ -18,7 +18,13 @@ const StyledButton = styled.button`
   max-width: fit-content;
   border: 1px solid ${theme.colors.primary};
   padding: 8px 16px;
-  & a {
+  transition: .1s;
+
+  &:hover{
+    background-color: #C778DD33;
+  }
+
+  a {
       color: ${theme.colors.white};
       font-weight: 500;
       size: 16px;

@@ -46,7 +46,7 @@ export const Projects = () => {
 }
 
 const StyledProjects = styled.section`
-margin-bottom: 105px;
+  margin-bottom: 105px;
   overflow: hidden;
 
   ${Container} {

@@ -5,17 +5,21 @@ import { Navigation } from '../../components/nav/Navigation'
 import { Container } from '../../components/styledComponents/Container'
 import { FlexWrapper } from '../../components/styledComponents/FlexWrapper'
 import { SocialNav } from '../../components/nav/SocialNav'
-
-const items = ['home', 'works', 'about-me', 'contacts']
+import { MobileNavigation } from '../../components/nav/MobileNavigation'
+import { theme } from '../../styles/Theme'
 
 export const Header = () => {
+
+  const items = ['home', 'works', 'about-me', 'contacts']
+
   return (
     <StyledHeader>
       <SocialNav />
       <Container justify='space-between'>
         <Logo />
         <FlexWrapper justify='flex-end' gap='25px'>
-          <Navigation menuItems={items} />
+          <Navigation menuItems={items}/>
+          <MobileNavigation menuItems={items}/>
           {/* <div className='dropdown'>
             <input type="text" id='dropdown-input' placeholder='Select an option' autoComplete='off' />
             <div id='dropdown-content' className='dropdown-content'>
@@ -32,7 +36,6 @@ export const Header = () => {
 
 const StyledHeader = styled.header`
   position: fixed;
-  background: rgba(0, 0, 0, 0);
   backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
   top: 0;
@@ -42,5 +45,9 @@ const StyledHeader = styled.header`
   padding-top: 30px;
   padding-bottom: 10px;
   z-index: 999;
+
+  @media ${theme.media.tablet} {
+    backdrop-filter: none;
+  }
 `
 

@@ -4,5 +4,9 @@ export const theme = {
         white: '#FFFFFF',
         primary: '#C778DD',
         gray: '#ABB2BF',
+    },
+    media: {
+        tablet: "screen and (max-width: 768px)",
+        mobile: "screen and (max-width: 576px)"
     }
 }

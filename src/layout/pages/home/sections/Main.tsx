@@ -11,9 +11,13 @@ import { theme } from '../../../../styles/Theme'
 export const Main = () => {
   return (
     <StyledMain>
-      <Container align='center'>
+        <GridWrapper>
+
         <div>
           <h1>Elias is a <span>web designer</span> and <span>front-end developer</span></h1>
+        </div>
+
+        <div>
           <Text>He crafts responsive websites where technologies meet creativity</Text>
           <Button title='Contact me' link='#' />
         </div>
@@ -27,7 +31,8 @@ export const Main = () => {
             <Text>Currently working on <span>Portfolio</span></Text>
           </StatusBox>
         </div>
-      </Container>
+
+        </GridWrapper>
     </StyledMain>
   )
 }
@@ -47,7 +52,7 @@ const StyledMain = styled.main`
     font-size: 32px;
     line-height: 42px;
     color: ${theme.colors.white};
-    margin-bottom: 32px;
+    /* margin-bottom: 22px; */
   }
   & h1 span {
     color: ${theme.colors.primary};
@@ -55,6 +60,51 @@ const StyledMain = styled.main`
 
   & div p{
     margin-bottom: 24px;
+  }
+
+  ${Container} {
+    position: relative;
+    /* @media ${theme.media.tablet} {
+      flex-direction: column-reverse;
+    } */
+  }
+`
+const GridWrapper = styled.div`
+  display: grid;
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 90px;
+  grid-template-columns: 1fr 460px;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+  
+  & > :nth-child(1) {
+    display: flex;
+    align-items: end;
+  }
+
+  & > :nth-child(3) {
+
+    grid-area: 1/2/3/4;
+  }
+
+  @media ${theme.media.tablet} {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    padding: 0 30px;
+
+    & > :nth-child(1) {
+      justify-self: center;
+    }
+    & > :nth-child(3) {
+      grid-area: 2/1/3/2;
+      justify-self: center;
+    }
+    }
+
+  @media ${theme.media.mobile} {
+      padding: 0 15px;
   }
 `
 

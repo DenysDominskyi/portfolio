@@ -26,6 +26,10 @@ export const Navigation = (props: {menuItems: Array<string>}) => {
 }
 
 const StyledNav = styled.nav`
+
+    @media ${theme.media.tablet} {
+        display: none;
+    }
     
     ul {
         display: flex;
