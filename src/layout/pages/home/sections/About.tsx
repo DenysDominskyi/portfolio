@@ -40,6 +40,10 @@ export const About = () => {
 const StyledAbout = styled.section`
     margin-bottom: 100px;
     overflow: hidden;
+    
+    @media ${theme.media.tablet} {
+        margin-bottom: 30px;
+    }
 
     ${Container} {
         position: relative;
@@ -66,17 +70,22 @@ const StyledAbout = styled.section`
         background-size: contain;
         }
 
-        & > ${FlexWrapper} > ${FlexWrapper} {
-            margin-bottom: 70px;
-        }
+        & > ${FlexWrapper} {
+            justify-content: center;
+
+            ${FlexWrapper} {
+                margin-bottom: 50px;
+            }
+        } 
     }
 `
 
 const PhotoBlock = styled.div`
     position: relative;
+    flex-grow: 1;
     top: -50px;
-    width: 340px;
-    height: 505px;
+    max-width: 340px;
+    width: 250px;
     overflow: hidden;
 
     &::before {
@@ -88,6 +97,10 @@ const PhotoBlock = styled.div`
         width: 90%;
         height: 1px;
         background-color: ${theme.colors.primary};
+    }
+
+    img {
+        width: 100%;
     }
 `
 const Icon1 = styled.div`

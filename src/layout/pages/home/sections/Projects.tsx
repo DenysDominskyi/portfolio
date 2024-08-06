@@ -49,6 +49,11 @@ const StyledProjects = styled.section`
   margin-bottom: 105px;
   overflow: hidden;
 
+
+  @media ${theme.media.tablet} {
+        margin-bottom: 50px;
+    }
+
   ${Container} {
     position: relative;
 
@@ -65,7 +70,15 @@ const StyledProjects = styled.section`
     ${FlexWrapper}:first-child{
       width: 100%;
     }
+
+    ${FlexWrapper}:last-child{
+      @media ${theme.media.tablet} {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
   }
+
 `
 
 const ViewAll = styled.a`

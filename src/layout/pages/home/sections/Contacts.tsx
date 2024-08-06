@@ -44,6 +44,10 @@ const StyledContacts = styled.section`
     position: relative;
     margin-bottom: 110px;
 
+    @media ${theme.media.tablet} {
+        margin-bottom: 50px;
+    }
+
     & p{
         width: 505px;
     }
@@ -61,6 +65,11 @@ const StyledContacts = styled.section`
             background-image: url(${squareDots});
             background-repeat: no-repeat;
             background-size: contain;
+        }
+
+        ${FlexWrapper} {
+            justify-content: center;
+            gap: 20px;
         }
     }
 `

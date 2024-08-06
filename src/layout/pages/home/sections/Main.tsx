@@ -7,6 +7,7 @@ import { Button } from '../../../../components/button/Button'
 import logoImg1 from '../../../../assets/images/Logo.png'
 import logoImg2 from '../../../../assets/images/Dots.png'
 import { theme } from '../../../../styles/Theme'
+import { font } from '../../../../styles/Common'
 
 export const Main = () => {
   return (
@@ -40,7 +41,7 @@ export const Main = () => {
 const StyledMain = styled.main`
   display: flex;
   padding-top: 80px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 
   & > div > :nth-child(1){
     max-width: 540px;
@@ -48,6 +49,7 @@ const StyledMain = styled.main`
   }
 
   & h1 {
+    /* ${font({Fmin: 16, Fmax: 32})} */
     font-weight: 600;
     font-size: 32px;
     line-height: 42px;
@@ -110,7 +112,7 @@ const GridWrapper = styled.div`
 
 const Photo = styled.div`
   position: relative;
-  width: 460px;
+  /* width: 460px; */
   height: 390px;
   overflow: hidden;
 

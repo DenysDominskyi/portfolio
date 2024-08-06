@@ -6,6 +6,7 @@ import { Card } from '../../../../components/cards/Card'
 import { SectionTitle } from '../../../../components/styledComponents/SectionTitle'
 import { Container } from '../../../../components/styledComponents/Container'
 import { SkillsCard } from '../../../../components/cards/SkillsCard'
+import { theme } from '../../../../styles/Theme'
 
 export const Skills = () => {
   return (
@@ -30,6 +31,7 @@ export const Skills = () => {
               <Icon iconId='rectangle' width='52' height='52' viewBox='0 0 87 87' />
             </ElementFive>
           </ElementsWrapper>
+
           <FlexWrapper direction='row-reverse' wrap='wrap' gap='16px'>
             <SkillsCard
               title='Tools'
@@ -60,12 +62,35 @@ export const Skills = () => {
 
 const StyledSkills = styled.section`
   margin-bottom: 110px;
+
+  @media ${theme.media.tablet} {
+        margin-bottom: 50px;
+    }
+
+  ${FlexWrapper} {
+
+    &:last-child{
+      justify-content: center;
+    }
+  }
 `
 const ElementsWrapper = styled.div`
     position: relative;
     min-width: 350px;
     height: 280px;
+
+    @media screen and (max-width: 1050px) {
+      position: absolute;
+      filter: blur(3px);
+      height: 300px;
+    }
+    @media screen and (max-width: 406px) {
+      transform: translateY(100px);
+      height: 400px;
+      min-width: auto;
+    }
 `
+
 
 const ElementOne = styled.span`
   position: absolute;

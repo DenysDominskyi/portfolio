@@ -47,6 +47,26 @@ const StyledFooter = styled.footer`
         width: 100%;
         justify-content: space-between;
     }
+
+    ${Container} {
+        ${FlexWrapper} {
+            @media ${theme.media.mobile} {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+        }
+
+        & > :first-child{
+            & > :last-child{
+                @media ${theme.media.mobile} {
+                display: flex;
+                width: 100%;
+                justify-content: space-around;
+            }
+            }
+        }
+    }
 `
 
 const LogoMailBox = styled.div`
