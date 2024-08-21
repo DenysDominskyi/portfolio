@@ -10,7 +10,7 @@ import { theme } from '../../../../styles/Theme'
 
 export const Skills = () => {
   return (
-    <StyledSkills>
+    <StyledSkills id='skills'>
       <Container direction='column' gap='10px'>
         <SectionTitle title='skills' lineWidth='240px'/>
         <FlexWrapper justify='center' gap='50px'>
@@ -62,6 +62,8 @@ export const Skills = () => {
 
 const StyledSkills = styled.section`
   margin-bottom: 110px;
+  position: relative;
+  background-color: ${theme.colors.primaryBg};
 
   @media ${theme.media.tablet} {
         margin-bottom: 50px;

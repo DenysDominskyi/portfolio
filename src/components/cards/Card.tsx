@@ -44,7 +44,8 @@ const StyledCard = styled.div<StyledCardPropsType>`
     flex-direction: column;
     height: fit-content;
     border: 1px solid #ABB2BF;
-    max-width: ${props => props.maxWidth || '330px'};
+    max-width: ${props => props.maxWidth || '310px'};
+
 
     img{
         width: 100%;

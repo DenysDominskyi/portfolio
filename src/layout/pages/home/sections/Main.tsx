@@ -9,31 +9,50 @@ import logoImg2 from '../../../../assets/images/Dots.png'
 import { theme } from '../../../../styles/Theme'
 import { font } from '../../../../styles/Common'
 
+import Typewriter from 'typewriter-effect'
+import Tilt from 'react-parallax-tilt'
+
 export const Main = () => {
   return (
-    <StyledMain>
-        <GridWrapper>
+    <StyledMain id='home'>
+      <GridWrapper>
 
         <div>
           <h1>Elias is a <span>web designer</span> and <span>front-end developer</span></h1>
         </div>
 
         <div>
-          <Text>He crafts responsive websites where technologies meet creativity</Text>
+
+          <Text><Typewriter
+            options={{
+              strings: ['He crafts responsive websites where technologies meet creativity'],
+              autoStart: true,
+              loop: true,
+              delay: 20,
+              deleteSpeed: 10,
+            }} /></Text>
           <Button title='Contact me' link='#' />
         </div>
 
-        <div>
-          <Photo>
-            <img src={photo} alt="my photo" />
-          </Photo>
-          <StatusBox>
-            <Square></Square>
-            <Text>Currently working on <span>Portfolio</span></Text>
-          </StatusBox>
-        </div>
+        <Tilt
+          className="background-stripes parallax-effect-glare-scale"
+          perspective={500}
+          glareEnable={true}
+          glareMaxOpacity={0.45}
+          scale={1.02}
+        >
+          <div>
+            <Photo>
+              <img src={photo} alt="my photo" />
+            </Photo>
+            <StatusBox>
+              <Square></Square>
+              <Text>Currently working on <span>Portfolio</span></Text>
+            </StatusBox>
+          </div>
+        </Tilt>
 
-        </GridWrapper>
+      </GridWrapper>
     </StyledMain>
   )
 }
@@ -49,7 +68,7 @@ const StyledMain = styled.main`
   }
 
   & h1 {
-    /* ${font({Fmin: 16, Fmax: 32})} */
+    /* ${font({ Fmin: 16, Fmax: 32 })} */
     font-weight: 600;
     font-size: 32px;
     line-height: 42px;

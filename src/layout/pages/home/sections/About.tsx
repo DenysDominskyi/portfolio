@@ -12,7 +12,7 @@ import squareDots from '../../../../assets/images/SquareDots.svg'
 
 export const About = () => {
     return (
-        <StyledAbout>
+        <StyledAbout id='about-me'>
             <Container direction='column' gap='20px'>
                 <SectionTitle title='about-me' lineWidth='325px' />
                 <FlexWrapper justify='space-between' wrap='wrap'>
@@ -40,6 +40,8 @@ export const About = () => {
 const StyledAbout = styled.section`
     margin-bottom: 100px;
     overflow: hidden;
+    position: relative;
+    background-color: ${theme.colors.primaryBg};
     
     @media ${theme.media.tablet} {
         margin-bottom: 30px;

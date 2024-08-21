@@ -12,10 +12,10 @@ import squareDots from '../../../../assets/images/SquareDots.svg'
 
 export const Contacts = () => {
     return (
-        <StyledContacts>
+        <StyledContacts id='contacts'>
             <Container direction='column' gap='45px'>
                 <SectionTitle title='contacts' lineWidth='130px' />
-                <FlexWrapper justify='space-between'  wrap='wrap'>
+                <FlexWrapper justify='space-between' wrap='wrap'>
                     <Text>I’m interested in freelance opportunities. However, if you have other request or question, don’t hesitate to contact me</Text>
                     <ContactsCard>
                         <Title weight='600' size='16px' lineHeight='21px'>Message me here</Title>
@@ -43,6 +43,7 @@ export const Contacts = () => {
 const StyledContacts = styled.section`
     position: relative;
     margin-bottom: 110px;
+    background-color: ${theme.colors.primaryBg};
 
     @media ${theme.media.tablet} {
         margin-bottom: 50px;

@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 import { theme } from '../../styles/Theme'
+import { Link } from 'react-scroll'
 
-export const Navigation = (props: {menuItems: Array<string>}) => {
+export const Navigation = (props: { menuItems: Array<{ title: string, href: string }> }) => {
 
     return (
         <StyledNav>
@@ -9,14 +10,22 @@ export const Navigation = (props: {menuItems: Array<string>}) => {
                 {props.menuItems.map((item, index) => {
                     return (
                         <ListItem key={index}>
-                            <Link href="">{item}
-                            <Mask>
-                                <span>{item}</span>
-                            </Mask>
-                            <Mask>
-                                <span>{item}</span>
-                            </Mask>
-                            </Link>
+                            <NavLink
+                                to={item.href}
+                                smooth={true}
+                                spy={true}
+                                activeClass='active'
+                                offset={-100}
+                                duration={500}
+                            >
+                                {item.title}
+                                <Mask>
+                                    <span>{item.title}</span>
+                                </Mask>
+                                <Mask>
+                                    <span>{item.title}</span>
+                                </Mask>
+                            </NavLink>
                         </ListItem>
                     )
                 })}
@@ -36,19 +45,6 @@ const StyledNav = styled.nav`
         display: flex;
         gap: 30px;
     }
-`
-
-const Link = styled.a`
-    font-size: 16px;
-    line-height: 21px;
-    font-weight: 500;
-    /* color: ${theme.colors.gray}; */
-    color: transparent;
-    transition: .2s;
-/* 
-    &:hover{
-        color: ${theme.colors.primary};
-    } */
 `
 
 const Mask = styled.span`
@@ -73,6 +69,20 @@ const Mask = styled.span`
 const ListItem = styled.li`
     position: relative;
 
+    &::marker{
+        content: '#';
+        color: ${theme.colors.primary};
+    }
+`
+
+const NavLink = styled(Link)`
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 500;
+    color: transparent;
+    transition: .2s;
+    cursor: pointer;
+
     &::before{
         content: '';
         display: inline-block;
@@ -88,13 +98,8 @@ const ListItem = styled.li`
         transform: scale(0);
         transition: all .2s;
     }
-    
-    &::marker{
-        content: '#';
-        color: ${theme.colors.primary};
-    }
 
-    &:hover{
+    &:hover, &.active{
         &::before {
             transform: scale(1);
         }

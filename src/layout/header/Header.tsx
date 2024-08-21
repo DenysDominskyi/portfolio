@@ -10,7 +10,27 @@ import { theme } from '../../styles/Theme'
 
 export const Header = () => {
 
-  const items = ['home', 'works', 'about-me', 'contacts']
+  const items = [
+    {
+      title: 'home',
+      href: 'home'
+    },
+    {
+      title: 'projects',
+      href: 'projects'
+    },
+    {
+      title: 'skills',
+      href: 'skills'
+    },
+    {
+      title: 'about-me',
+      href: 'about-me'
+    },
+    {
+      title: 'contacts',
+      href: 'contacts'
+    }]
 
   return (
     <StyledHeader>
@@ -36,8 +56,7 @@ export const Header = () => {
 
 const StyledHeader = styled.header`
   position: fixed;
-  backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+  background-color: ${theme.colors.primaryBg};
   top: 0;
   left: 0;
   right: 0;

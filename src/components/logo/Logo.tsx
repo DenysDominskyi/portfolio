@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 export const Logo = () => {
     return (
-        <StyledLogo href="#">
+        <StyledLogo href="#home">
             <Icon iconId='logo' width="26" height="16" viewBox="0 0 16 16"/>Elias
         </StyledLogo>
     )

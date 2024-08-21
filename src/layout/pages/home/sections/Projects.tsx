@@ -10,7 +10,7 @@ import { SectionTitle } from '../../../../components/styledComponents/SectionTit
 
 export const Projects = () => {
   return (
-    <StyledProjects>
+    <StyledProjects id='projects'>
       <Container direction='column' justify='center' align='center' gap='50px'>
         <FlexWrapper align='center' justify='space-between'>
             <SectionTitle title='projects' lineWidth='510px'
@@ -48,7 +48,8 @@ export const Projects = () => {
 const StyledProjects = styled.section`
   margin-bottom: 105px;
   overflow: hidden;
-
+  position: relative;
+  background-color: ${theme.colors.primaryBg};
 
   @media ${theme.media.tablet} {
         margin-bottom: 50px;
@@ -70,12 +71,10 @@ const StyledProjects = styled.section`
     ${FlexWrapper}:first-child{
       width: 100%;
     }
-
+    
     ${FlexWrapper}:last-child{
-      @media ${theme.media.tablet} {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
+      justify-content: center;
+      flex-wrap: wrap;
     }
   }
 
