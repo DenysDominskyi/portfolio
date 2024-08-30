@@ -40,14 +40,6 @@ export const Header = () => {
         <FlexWrapper justify='flex-end' gap='25px'>
           <Navigation menuItems={items}/>
           <MobileNavigation menuItems={items}/>
-          {/* <div className='dropdown'>
-            <input type="text" id='dropdown-input' placeholder='Select an option' autoComplete='off' />
-            <div id='dropdown-content' className='dropdown-content'>
-              <div className='dropdown-item'>EN</div>
-              <div className='dropdown-item'>SV</div>
-              <div className='dropdown-item'>UA</div>
-            </div>
-          </div> */}
         </FlexWrapper>
       </Container>
     </StyledHeader>

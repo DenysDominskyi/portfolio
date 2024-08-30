@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 import { theme } from '../../styles/Theme'
 import { useState } from 'react'
+import { Link } from 'react-scroll'
 
 export const MobileNavigation = (props: { menuItems: Array<{ title: string, href: string }> }) => {
 
@@ -20,9 +21,12 @@ export const MobileNavigation = (props: { menuItems: Array<{ title: string, href
                     {props.menuItems.map((item, index) => {
                         return (
                             <ListItem key={index}>
-                                <Link 
-                                href={`#${item.href}`}
-                                onClick={burgerButtonHendler}
+                                <NavLink
+                                    to={item.href}
+                                    spy={true}
+                                    activeClass='active'
+                                    offset={-100}
+                                    onClick={burgerButtonHendler}
                                 >
                                     {item.title}
                                     <Mask>
@@ -31,7 +35,7 @@ export const MobileNavigation = (props: { menuItems: Array<{ title: string, href
                                     <Mask>
                                         <span>{item.title}</span>
                                     </Mask>
-                                </Link>
+                                </NavLink>
                             </ListItem>
                         )
                     })}
@@ -114,34 +118,29 @@ const MobileNavPopup = styled.div<{ isOpen: boolean }>`
 
     z-index: 9999;
 
-    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    ${props => props.isOpen && css<{ isOpen: boolean }>`
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    `}
+    transform: translateY(-100%);
+    transition: .8s ease-in-out;
 
     ul {
         display: flex;
-        gap: 30px;
+        gap: 10px;
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        transition: .6s ease-in-out;
     }
-`
 
-const Link = styled.a`
-    font-size: 16px;
-    line-height: 21px;
-    font-weight: 500;
-    /* color: ${theme.colors.gray}; */
-    color: transparent;
-    transition: .2s;
-/* 
-    &:hover{
-        color: ${theme.colors.primary};
-    } */
+    ${props => props.isOpen && css<{ isOpen: boolean }>`
+        transform: translateY(0);
+
+        & ul {
+            gap: 40px;
+        }
+    `}
 `
 
 const Mask = styled.span`
@@ -163,8 +162,12 @@ const Mask = styled.span`
     }
 `
 
-const ListItem = styled.li`
-    position: relative;
+const NavLink = styled(Link)`
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 500;
+    color: transparent;
+    transition: .2s;
 
     &::before{
         content: '';
@@ -182,12 +185,9 @@ const ListItem = styled.li`
         transition: all .2s;
     }
     
-    &::marker{
-        content: '#';
-        color: ${theme.colors.primary};
-    }
+    
 
-    &:hover{
+    &:hover, &.active{
         &::before {
             transform: scale(1);
         }
@@ -200,5 +200,15 @@ const ListItem = styled.li`
                 transform: skewX(12deg) translateX(-2px);
             }
         }
+    }
+`
+
+
+const ListItem = styled.li`
+    position: relative;
+
+    &::marker{
+        content: '#';
+        color: ${theme.colors.primary};
     }
 `
